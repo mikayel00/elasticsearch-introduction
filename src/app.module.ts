@@ -12,6 +12,7 @@ import { UtilsModule } from './common/utils/utils.module';
 import { DepartmentModule } from './modules/department/department.module';
 import { RoleModule } from './modules/role/role.module';
 import { SharedModule } from './shared/shared.module';
+import { ElasticModule } from './modules/elastic/elastic.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { SharedModule } from './shared/shared.module';
     AdminModule,
     AuthModule,
     DepartmentModule,
+    ElasticModule,
     RoleModule,
     SharedModule,
     UserModule,

@@ -21,12 +21,10 @@ export const schema = Joi.object({
   // Jwt
   JWT_SECRET: Joi.string().required(),
   JWT_EXPIRES_IN: Joi.string().required(),
-  // Yandex S3
-  S3_ACCESS_KEY: Joi.string().required(),
-  S3_SECRET_ACCESS_KEY: Joi.string().required(),
-  S3_BUCKET_NAME: Joi.string().required(),
-  S3_ENDPOINT: Joi.string().required(),
-  S3_REGION: Joi.string().required(),
+  // Elasticsearch
+  ELASTICSEARCH_NODE: Joi.string().uri(),
+  ELASTICSEARCH_USERNAME: Joi.string(),
+  ELASTICSEARCH_PASSWORD: Joi.string(),
 });
 
 export const configuration = () => ({
@@ -45,12 +43,10 @@ export const configuration = () => ({
     secret: process.env.JWT_SECRET,
     expiresIn: process.env.JWT_EXPIRES_IN,
   },
-  s3: {
-    region: process.env.S3_REGION,
-    endpoint: process.env.S3_ENDPOINT,
-    accessKey: process.env.S3_ACCESS_KEY,
-    secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
-    bucketName: process.env.S3_BUCKET_NAME,
+  elastic: {
+    node: process.env.ELASTICSEARCH_NODE,
+    username: process.env.ELASTICSEARCH_USERNAME,
+    password: process.env.ELASTICSEARCH_PASSWORD,
   },
 });
 
